@@ -13,7 +13,11 @@ Based on the inital data exploration we've done, we plan to drop all rows that a
 # Milestone 3: Pre-Processing
 
 ## Updates:
-For this milestone we finished major preprocessing by scaling the data, using encoding, and
+We began major preprocessing by dropping data that we thought was irrelevant or redundant. We dropped data from 2016 and 2017 because we felt it was too outdated and would not help our model make accurate predictions. We also dropped the total wages, individual months of employement, and quarter because there was overlap between these columns and other that we kept. Lastly, we dropped area type and business ownership because we felt that these were irrelevant for our purposes.
+
+Next, we dropped outliers using IQR and used NAICS code to generalize industry names into broader categories. Once this was finished, we tried out both one-hot encoding and label encoding for the 'Sector' feature. For both encodings, we trained decision tree models with different depths (30 and 50) and splits (5 and 2) and compared the test accuracy results. We found that the highest test accuracy came from using one-hot encoding with a decision tree with a depth of 50 and split of 2.
+
+In preparation for the next milestone, we also trained a random forest model with the same two encodings and found that the highest test accuracy came from using label encoding with a depth of 50 and a split of 3.
 
 ## Model Evaluation:
 ### Where does your model fit in the fitting graph?
