@@ -36,9 +36,13 @@ To improve our first model we could make use of k-fold cross validation.
 [Milestone 3 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb)
 
 # Milestone 4:
-
+We trained a k nearest neighbors model using KNeighborsClassifier in scikit-learn.
 ## Updates:
-**TODO: Add updates here**
+We mapped California counties to their respective regions to reduce the number of output classes
+
+We dropped the year column from our data before proceeding with our model
+
+We performed min max scaling on the numerical values in X_test and X_train before running KNeighborsClassifier on them with number of neighbors = 2
 
 ## Model Evaluation:
 ### Where does your model fit in the fitting graph?
@@ -52,7 +56,7 @@ In conclusion, after grouping counties into broader regional categories and usin
 ### What is the conclusion of your 2nd model? 
 The conclusion of our second model is that it is not a more precise model than our first one. Improvements in accuracy came from additional data preprocessing and were not due to the use of KNN. 
 ### What can be done to possibly improve it?
-We could apply PCA to our test and train sets prior to fitting the model.
+We may still be overfitting to training data. However, this is despite trying things like PCA and oversampling. We were only able to increase test accuracy when we reduced the number of ouput classes by mapping counties to their respective regions. This suggests that we don't have enough data for our 5 output classes. Thus, we should try to increase our data through a combination of mapping counties to regions AND oversampling (we did not combine the two previously). We could also try PCA again on top of these changes.
 
 ## Notebook Link:
 [Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
