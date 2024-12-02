@@ -40,15 +40,15 @@ To improve our first model we could make use of k-fold cross validation.
 ## Model Evaluation:
 ### Where does your model fit in the fitting graph?
 ![model fit](MST4_graph.jpg)
-The model has a higher error on test data than it does on training data.
+The model has a lower accuracy for test data than for training data. There is roughly a 25% difference between the two.
 ### What are the next models you are thinking of and why?
-The next models we are thinking about using are Naïve Bayes, a support vector machine, k-nearest neighbors, or random forest. Specifically, we are thinking about using Naïve Bayes because if our data is conditionally independent, Naïve Bayes should work well. This is significant because it does seem like our data should be conditionally independent by cursory glance. Additionally, Naïve Bayes supports label encoding, whereas models like SVM don't support label encoding. This is significant because using label encoding could help us avoid the curse of dimensionality that could arise from one-hot and binary encoding. However, using an SVM with a soft margin would help us avoid overfitting to the training data which is occuring now with our decision tree model.
-
+The next models we are thinking about using SVM since it works well as a classifier for non-linear decision boundaries, and we can pair this with PCA to reduce the dimensionality of the dataset. Another option we are considering is a neural network using a multilayer perceptron model, which may work well since the dataset is large and complex. All of our models so far have had low accuracy, indicating that the relationship between the features and the target may be difficult to capture, an MLP model may be able to capture the relationship given the size of the dataset.
 ## Conclusions:
-### What is the conclusion of your 1st model? 
-The conclusion of our first model is a very high training accuracy of ~0.9995 and an abysmal testing accuracy of ~0.6149. In other words, our decision tree model overfits to the training data and doesn't generalize well.
+In conclusion, after grouping counties into broader regional categories and using cross-fold validation to evaluate our model fitting, overfitting is no longer a problem but accuracy remains less than ideal, at around 70-75% for all models trained.
+### What is the conclusion of your 2nd model? 
+The conclusion of our second model is that it is not a more precise model than our first one. Improvements in accuracy came from additional data preprocessing and were not due to the use of KNN. 
 ### What can be done to possibly improve it?
-To improve our first model we could make use of k-fold cross validation.
+We could apply PCA to our test and train sets prior to fitting the model.
 
 ## Notebook Link:
 [Milestone 3 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb)
