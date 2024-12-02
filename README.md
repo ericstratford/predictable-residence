@@ -50,6 +50,8 @@ We performed min max scaling on the numerical values in X_test and X_train befor
 The model has a lower accuracy for test data than for training data. There is roughly a 25% difference between the two.
 ### What are the next models you are thinking of and why?
 The next models we are thinking about using SVM since it works well as a classifier for non-linear decision boundaries, and we can pair this with PCA to reduce the dimensionality of the dataset. Another option we are considering is a neural network using a multilayer perceptron model, which may work well since the dataset is large and complex. All of our models so far have had low accuracy, indicating that the relationship between the features and the target may be difficult to capture, an MLP model may be able to capture the relationship given the size of the dataset.
+### TP/TN/FP/FN Rates
+The KNN model yielded a correct prediction rate (accuracy) of 75.99%, a false positive rate of 8.00%, and a false negative rate of 24.01%. This shows us that our predictions are largely correct, though the model has a high likelihood of false negatives (i.e. misclassifying). Because this is a multi-class classification problem, the TP/TN/FP/FN values are less valuable for evaluating the performance of the model. In this case, all we care about is the TP rate (accuracy).
 
 ## Conclusions:
 In conclusion, after grouping counties into broader regional categories and using cross-fold validation to evaluate our model fitting, overfitting is no longer a problem but accuracy remains less than ideal, at around 70-75% for all models trained.
