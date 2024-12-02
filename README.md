@@ -38,16 +38,19 @@ To improve our first model we could make use of k-fold cross validation.
 # Milestone 4: Second Model
 
 ## Updates:
-Include your new work and updates you have all added
+**TODO: Include your new work and updates you have all added**
 
 ## Model Evaluation:
 ### Where does your model fit in the fitting graph?
-![model fit]()
+![model fit](MST4_graph.jpg)
 ### What are the next models you are thinking of and why?
+The next models we are thinking of are
 
 ## Conclusion:
 ### What is the conclusion of your 2nd model?
-### What can be done to possible improve it?
+The conclusion of our second model is 
+### What can be done to possibly improve it?
+To improve our second model we would 
 
 ## Notebook Link:
 [Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
