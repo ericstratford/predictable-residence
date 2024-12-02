@@ -56,3 +56,42 @@ We could apply PCA to our test and train sets prior to fitting the model.
 
 ## Notebook Link:
 [Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
+
+# Introduction to Your Project
+
+# Figures
+
+# Methods Section
+## Model 1
+## Model 2
+
+# Results Section
+## Model 1
+## Model 2
+
+# Discussion Section
+
+# Conclusion
+## Model 1
+## Model 2
+
+# Statement of Collaboration
+Name:
+(Job) Title:
+Contribution:
+
+Name:
+Title:
+Contribution:
+
+Name:
+Title:
+Contribution:
+
+Name:
+Title:
+Contribution:
+
+Name:
+Title:
+Contribution:
