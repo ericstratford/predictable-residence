@@ -47,7 +47,7 @@ We performed min max scaling on the numerical values in X_test and X_train befor
 ## Model Evaluation:
 ### Where does your model fit in the fitting graph?
 ![model fit](MST4_graph.png)
-The model has a lower accuracy for test data than for training data. There is roughly a 25% difference between the two.
+The model has a similar accuracy for the train and test data, putting it in the underfitting range.
 ### What are the next models you are thinking of and why?
 The next models we are thinking about using SVM since it works well as a classifier for non-linear decision boundaries, and we can pair this with PCA to reduce the dimensionality of the dataset. Another option we are considering is a neural network using a multilayer perceptron model, which may work well since the dataset is large and complex. All of our models so far have had low accuracy, indicating that the relationship between the features and the target may be difficult to capture, an MLP model may be able to capture the relationship given the size of the dataset.
 ### TP/TN/FP/FN Rates
