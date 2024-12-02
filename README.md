@@ -35,22 +35,20 @@ To improve our first model we could make use of k-fold cross validation.
 ## Notebook Link:
 [Milestone 3 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb)
 
-# Milestone 4: Second Model
-
-## Updates:
-**TODO: Include your new work and updates you have all added**
+# Milestone 4:
 
 ## Model Evaluation:
 ### Where does your model fit in the fitting graph?
-![model fit](MST4_graph.jpg)
+![model fit](MST4_graph.png)
+The model has a lower accuracy for test data than for training data. There is roughly a 25% difference between the two.
 ### What are the next models you are thinking of and why?
-The next models we are thinking of are
-
-## Conclusion:
-### What is the conclusion of your 2nd model?
-The conclusion of our second model is 
+The next models we are thinking about using SVM since it works well as a classifier for non-linear decision boundaries, and we can pair this with PCA to reduce the dimensionality of the dataset. Another option we are considering is a neural network using a multilayer perceptron model, which may work well since the dataset is large and complex. All of our models so far have had low accuracy, indicating that the relationship between the features and the target may be difficult to capture, an MLP model may be able to capture the relationship given the size of the dataset.
+## Conclusions:
+In conclusion, after grouping counties into broader regional categories and using cross-fold validation to evaluate our model fitting, overfitting is no longer a problem but accuracy remains less than ideal, at around 70-75% for all models trained.
+### What is the conclusion of your 2nd model? 
+The conclusion of our second model is that it is not a more precise model than our first one. Improvements in accuracy came from additional data preprocessing and were not due to the use of KNN. 
 ### What can be done to possibly improve it?
-To improve our second model we would 
+We could apply PCA to our test and train sets prior to fitting the model.
 
 ## Notebook Link:
 [Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
