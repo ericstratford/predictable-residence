@@ -62,6 +62,8 @@ We could apply PCA to our test and train sets prior to fitting the model.
 # Figures
 
 # Methods Section
+## Data Exploration
+## Preprocessing
 ## Model 1
 ## Model 2
 
