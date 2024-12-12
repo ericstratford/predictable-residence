@@ -58,7 +58,7 @@ Our project aims to predict the California region (i.e. Superior Counties, Bay A
 
 # 2. Methods
 
-### Data Exploration
+## Data Exploration
 
 Here are the steps we took to explore our data: 
 - Print a heatmap for non-categorical data
@@ -72,8 +72,9 @@ Here are the steps we took to explore our data:
 - Print all unique values in the *Area Types* column
 - Print the number of datapoints where *Area Type* is county
 - Print a pairplot that only includes obeservations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is annual
+- Print a heatmap for non-categorical data
 
-### Preprocessing
+## Preprocessing
 
 Here are the steps we took to preprocess our data: 
 - Drop columns Ownership, 1st Month Emp, 2nd Month Emp, 3rd Month Emp, and Total Wages (All Workers)
@@ -88,7 +89,7 @@ Here are the steps we took to preprocess our data:
 - Create a dataframe that label encodes the *Sector* feature
 - Create a dataframe that drops the *Sector* feature
 
-### Model 1
+## Model 1
 
 Here are the steps we took to create our [first model](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb): 
 - Split the data into train and test using the one hot encoded dataframe
@@ -96,7 +97,7 @@ Here are the steps we took to create our [first model](https://github.com/ericst
 - Train and test our data using a random forest model
 - Train and test our data using a k-nearest neighbors model
 
-### Model 2
+## Model 2
 
 Here are the steps we took to create our [second model](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb): 
 - Map counties to their respective regions
@@ -111,49 +112,80 @@ Here are the steps we took to create our [second model](https://github.com/erics
 
 ## Data Exploration
 
-Results from Data Exploration: 
+Results from data exploration: 
 - The columns of the dataset are *Area Type*, *Area Name*, *Year*, *Quarter*, *Ownership*, *NAICS Level*, *NAICS Code*, *Industry Name*, *Establishments*, *Average Monthly Employment*, *1st Month Emp*, *2nd Month Emp*, *3rd Month Emp*, *Total Wages (All Workers)*, and *Average Weekly Wages*.
+- The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for every column in the dataset are shown in **Figure 1**
 
-![Fig 1](./CSE151A_fig1.png "**Figure 1.** The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column in our dataset")
+![Fig 1](./CSE151A_fig1.png)
+<center>
+<b>Figure 1.</b> Mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column
+</center><br>
 
 - The number of datapoints from 2018-2019 is 506913.
 - There are too many industry names to list (1000+ unique industry names).
 - There are no null values in the dataset.
+- The datatypes of each column are shown in **Figure 2**
 
-![Fig 2](./CSE151A_fig2.png "**Figure 2.** Columns and their associated datatypes")
+![Fig 2](./CSE151A_fig2.png)
+<center>
+<b>Figure 2.</b> Columns and their associated datatypes
+</center><br>
 
 - Shapiro Wilks test failed because we have too many observations.
 - The following are all the unique Area Types: 'County', 'California - Statewide', 'United States'
 - 441540 datapoints are just counties.
+- The pairplot that only includes obeservations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is annual is shown in **Figure 3**
 
-![Fig 3](./CSE151A_fig3.png "**Figure 3.** A pairplot that only includes observations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is Annual")
+![Fig 3](./CSE151A_fig3.png)
+<center>
+<b>Figure 3.</b> Pairplot that only includes observations where <i>Area Type</i> is county, <i>Year</i> is either 2019 or 2018, and <i>Quarter</i> is Annual
+</center><br>
 
-![Fig 4](./CSE151A_fig4.png "**Figure 4.** A heatmap for non-categorical data")
+- The heatmap for non-categorical data is shown in **Figure 4**
+
+![Fig 4](./CSE151A_fig4.png)
+<center>
+<b>Figure 4.</b> Heatmap for non-categorical data
+</center><br>
 
 ## Preprocessing
-Results from Preprocessing: 
-![Fig 5](./CSE151A_fig5.png "**Figure 5.** Resulting dataframe after performing all the preprocessing outlined in the methods section")
 
-### Model 1
+Results from preprocessing:
+
+- The resulting dataframe after performing all of the preprocessing steps outlined in the methods section is shown in **Figure 5**
+
+![Fig 5](./CSE151A_fig5.png)
+<center> 
+<b>Figure 5.</b> Resulting dataframe after performing preprocessing
+</center><br>
+
+## Model 1
+
 Results from Model 1:
-- Decision Tree Classification Model using Gini
+- Decision Tree Classification Model:
     - Training accuracy: 0.9995052425263078
     - Testing accuracy: 0.6148576647891613
-- Random Forest Classification Model
+- Random Forest Classification Model:
     - Training accuracy: 0.9995052425263078
     - Testing accuracy: 0.6089968031663876
-- K-nearest neighbors Classification Model
+- K-nearest Neighbors Classification Model:
     - Training accuracy: 0.4934254343399745
     - Testing accuracy: 0.1996498706043538
-### Model 2
 
-![Fig 6](./CSE151A_fig6.png "**Figure 6.** Resulting dataframe after mapping counties to their respective regions")
+## Model 2
 
-Results from [Model 2]:
-- For Decision Tree Classification Model
+Results from Model 2:
+- The resulting dataframe after mapping counties to their respective regions is shown in **Figure 6**
+
+![Fig 6](./CSE151A_fig6.png)
+<center> 
+<b>Figure 6.</b> Resulting dataframe after mapping counties to their respective regions 
+</center><br>
+
+- Decision Tree Classification Model:
     - Cross-validation accuracy: 0.7119750017016482
     - Testing accuracy: 0.7351195006850357
-- For K-nearest neighbors classification Model
+- K-nearest Neighbors classification Model:
     - Mean accuracy: 0.7141
     - Testing accuracy: 0.7598569036383012
 - Combined rates across all classes:
