@@ -175,22 +175,22 @@ Building on the findings from Model 1, we implemented a second decision tree mod
 ## Model 2
 
 # Statement of Collaboration
-Name:
-(Job) Title:
+Name: Eric Stratford
+Title:
 Contribution:
 
-Name: Syed
-Title: Team Member
+Name: Syed Usmani
+Title: Coder
 Contribution: Assited in pre-processing, tuning models, adding cross-validation, and writing.
 
-Name:
+Name: Kesler Anderson
+Title: Team Manager
+Contribution: 
+
+Name: Maasilan Kumaraguru
 Title:
 Contribution:
 
-Name:
-Title:
-Contribution:
-
-Name:
+Name: Viet Tran
 Title:
 Contribution:
