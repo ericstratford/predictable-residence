@@ -176,19 +176,19 @@ Building on the findings from Model 1, we implemented a second decision tree mod
 
 # Statement of Collaboration
 Name: Eric Stratford
-Title:
-Contribution:
+Title: Team Leader
+Contribution: Created the group repository and discord. Assisted with coding and milestone writeups.
 
 Name: Syed Usmani
-Title: Coder
+Title: Coder/Writer
 Contribution: Assited in pre-processing, tuning models, adding cross-validation, and writing.
 
 Name: Kesler Anderson
-Title: Team Manager
-Contribution: 
+Title: Project Manager
+Contribution: Managed project deadlines by making Gradescope submissions and creating milestone branches. Assisted with coding and miletone writeups.
 
 Name: Maasilan Kumaraguru
-Title:
+Title: Coder
 Contribution:
 
 Name: Viet Tran
