@@ -1,6 +1,3 @@
-# predictable-residence
-This project (tentatively) aims to predict the residence of Californians based on demographic and characteristic features.
-
 # Milestone 2: Pre-processing Plans
 
 ## Pre-processing Plans:
@@ -57,7 +54,9 @@ We could apply PCA to our test and train sets prior to fitting the model.
 ## Notebook Link:
 [Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
 
-# Introduction to Your Project
+# Milestone 5:
+
+## Introduction
 Our project aims to predict the California region (i.e. Superior Counties, Bay Area Counties, Central Counties, Southern Counties, Los Angeles Counties) in which an establishment is based from observations of establisments based on features like number of establishments, establishment sector, average weekly wages, and average monthly employment using the Quarterly Census of Employment and Wages dataset (linked [here](https://catalog.data.gov/dataset/quarterly-census-of-employment-and-wages-qcew-a6fea)). We will employ machine learning algorithms and specialized models in order to accomplish this task. Our model would be a classification model doing supervised learning since California counties, which can be mapped to regions, are included in the dataset. This model could highlight which establishment sectors are popular in any given California region. We chose this project because inferring the region in which an establishment is based from features of that establishment seemed interesting. Inferring the region in which an establishment is based from features of said establishment is significant because it helps us understand which establishments are popular and infer which are unpopular in any California region. Knowing where certain establishmnt sectors are popular or unpopular enables entrepreneurs to find untapped markets where there may be little competition.
 
 # Figures
@@ -89,13 +88,13 @@ In order to perform preprocessing we did the following:
 - Create a dataframe that one hot encodes the *Sector* feature
 - Create a dataframe that label encodes the *Sector* feature
 - Create a dataframe that drops the *Sector* feature
-## Model 1
+## [Model 1](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb)
 In order to create Model 1 we did the following: 
 - Split the data into train and test using the one hot encoded dataframe
 - Trained and tested our data using a decision tree model
 - Trained and tested our data using a random forest model
 - Trained and tested our data using a k nearest neighbors model
-## Model 2
+## [Model 2](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
 In order to create Model 2 we did the following: 
 - mapped counties to their respective regions
 - Standardized X_train and X_test using normalization
@@ -104,6 +103,7 @@ In order to create Model 2 we did the following:
 - Got average k-fold cross validation accuracy for k nearest neighbors model with k = 10
 - Trained and tested our data using a k nearest neighbors model
 - Calculated the accuracy, true positive rate, true negative rate, false positive rate, and false negative rate across all classes for k nearest neighbors
+
 # Results Section
 ## Data Exploration
 Results from Data Exploration: 
