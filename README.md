@@ -22,7 +22,7 @@ Here are the steps we took to explore our data:
 
 ## Preprocessing
 
-Here are the steps we took to preprocess our data: 
+Here are the steps we took to [preprocess](https://github.com/ericstratford/predictable-residence/blob/Milestone2/CA_Residence_Prediction.ipynb) our data: 
 - Drop the columns *Ownership*, *1st Month Emp*, *2nd Month Emp*, *3rd Month Emp*, and *Total Wages (All Workers)*
 - Drop columns *Area Type* and *Quarter*
 - Drop observations from 2016 and 2017
@@ -39,21 +39,21 @@ Here are the steps we took to preprocess our data:
 
 Here are the steps we took to create our [first model](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb): 
 - Split the data into train and test using the one hot encoded dataframe
-- Train and test our data using a decision tree model
-- Train and test our data using a random forest model
-- Train and test our data using a k-nearest neighbors model
+- Train and test our data using a decision tree model with criterion set to gini, a max_depth of 50, and min_samples_split set to 2
+- Train and test our data using a random forest model with n_estimators set to 100, a max_depth of 50, and min_samples_split set to 2
+- Train and test our data using a k-nearest neighbors model with n_neighbors set to 5
 
 ## Model 2
 
-Here are the steps we took to create our [second model](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb): 
+Here are the steps we took to create our [second model](https://github.com/ericstratford/predictable-residence/blob/main/CA_Residence_Prediction.ipynb): 
 - Map counties to their respective regions
 - Standardize X_train and X_test using normalization
-- Get the average k-fold cross validation accuracy for decision tree model with k = 10
-- Train and test our data using a decision tree model 
-- Get the average k-fold cross validation accuracy for k-nearest neighbors model with k = 10
-- Train and test our data using a k nearest neighbors model BEFORE hyperparamter tuning
+- Get the average k-fold cross validation accuracy for decision tree model with cv = 10 (decison tree model has parameters criterion='gini', max_depth=40, min_samples_split=2, and random_state=0)
+- Train and test our data using a decision tree model with same parameters as before
+- Get the average k-fold cross validation accuracy for k-nearest neighbors model with cv = 5 and scoring set to accuracy (k-nearest neighbors has parameters n_neighbors=2 and weights='distance')
+- Train and test our data using a k nearest neighbors model BEFORE hyperparamter tuning with the same parameters as before
 - Perform hyperparameter tuning for our k nearest neighbors model
-- Train and test our data using a k nearest neighbors model AFTER hyperparameter tuning
+- Train and test our data using a k nearest neighbors model AFTER hyperparameter tuning (k-nearest neighbors has parameters 'n_neighbors': 1, 'p': 2, 'weights': 'uniform')
 - Calculate the accuracy, true positive rate, true negative rate, false positive rate, and false negative rate for each class with k-nearest neighbors
 
 # 3. Results
