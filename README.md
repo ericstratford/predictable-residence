@@ -51,18 +51,15 @@ The conclusion of our second model is that it is not a more precise model than o
 ### What can be done to possibly improve it?
 We could apply PCA to our test and train sets prior to fitting the model.
 
-## Notebook Link:
-[Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
 
-# Milestone 5:
+# Introduction
 
-## Introduction
 Our project aims to predict the California region (i.e. Superior Counties, Bay Area Counties, Central Counties, Southern Counties, Los Angeles Counties) in which an establishment is based from observations of establisments based on features like number of establishments, establishment sector, average weekly wages, and average monthly employment using the Quarterly Census of Employment and Wages dataset (linked [here](https://catalog.data.gov/dataset/quarterly-census-of-employment-and-wages-qcew-a6fea)). We will employ machine learning algorithms and specialized models in order to accomplish this task. Our model would be a classification model doing supervised learning since California counties, which can be mapped to regions, are included in the dataset. This model could highlight which establishment sectors are popular in any given California region. We chose this project because inferring the region in which an establishment is based from features of that establishment seemed interesting. Inferring the region in which an establishment is based from features of said establishment is significant because it helps us understand which establishments are popular and infer which are unpopular in any California region. Knowing where certain establishmnt sectors are popular or unpopular enables entrepreneurs to find untapped markets where there may be little competition.
 
-# Figures
+# Methods
 
-# Methods Section
 ## Data Exploration
+
 In order to perform data exploration we did the following: 
 - printed a heatmap for non-categorical data
 - printed the columns of the dataset
@@ -75,7 +72,9 @@ In order to perform data exploration we did the following:
 - printed all unique values in the *Area Types* column
 - printed the number of datapoints where *Area Type* is county
 - printed a pairplot that only includes obeservations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is annual
+
 ## Preprocessing
+
 In order to perform preprocessing we did the following: 
 - Drop columns Ownership, 1st Month Emp, 2nd Month Emp, 3rd Month Emp, and Total Wages (All Workers)
 - Dropped columns *Area Type* and *Quarter*
@@ -88,13 +87,18 @@ In order to perform preprocessing we did the following:
 - Create a dataframe that one hot encodes the *Sector* feature
 - Create a dataframe that label encodes the *Sector* feature
 - Create a dataframe that drops the *Sector* feature
-## [Model 1](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb)
+
+## Model 1
+
 In order to create Model 1 we did the following: 
 - Split the data into train and test using the one hot encoded dataframe
 - Trained and tested our data using a decision tree model
 - Trained and tested our data using a random forest model
 - Trained and tested our data using a k nearest neighbors model
-## [Model 2](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
+[Model 1 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone3/CA_Residence_Prediction.ipynb)
+
+## Model 2
+
 In order to create Model 2 we did the following: 
 - mapped counties to their respective regions
 - Standardized X_train and X_test using normalization
@@ -103,30 +107,34 @@ In order to create Model 2 we did the following:
 - Got average k-fold cross validation accuracy for k nearest neighbors model with k = 10
 - Trained and tested our data using a k nearest neighbors model
 - Calculated the accuracy, true positive rate, true negative rate, false positive rate, and false negative rate across all classes for k nearest neighbors
+[Model 2 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
 
 # Results Section
+
 ## Data Exploration
+
 Results from Data Exploration: 
 - The columns of the dataset are *Area Type*, *Area Name*, *Year*, *Quarter*, *Ownership*, *NAICS Level*, *NAICS Code*, *Industry Name*, *Establishments*, *Average Monthly Employment*, *1st Month Emp*, *2nd Month Emp*, *3rd Month Emp*, *Total Wages (All Workers)*, and *Average Weekly Wages*.
-- ![Fig 1](./CSE151A_fig1.png)
-<p style="text-align:center;">**Figure 1.** The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column in our dataset</p>
+
+![Fig 1](./CSE151A_fig1.png "**Figure 1.** The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column in our dataset")
+
 - The number of datapoints from 2018-2019 is 506913.
 - There are too many industry names to list (1000+ unique industry names).
 - There are no null values in the dataset.
-- ![Fig 2](./CSE151A_fig2.png)
-<p style="text-align:center;">**Figure 2.** Columns and their associated datatypes</p>
+
+![Fig 2](./CSE151A_fig2.png "**Figure 2.** Columns and their associated datatypes")
+
 - Shapiro Wilks test failed because we have too many observations.
 - The following are all the unique Area Types: 'County', 'California - Statewide', 'United States'
 - 441540 datapoints are just counties.
-- ![Fig 3](./CSE151A_fig3.png)
-<p style="text-align:center;">**Figure 3.** A pairplot that only includes observations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is Annual.</p>
-- ![Fig 4](./CSE151A_fig4.png)
-<p style="text-align:center;">**Figure 4.** A heatmap for non-categorical data</p>
+
+![Fig 3](./CSE151A_fig3.png "**Figure 3.** A pairplot that only includes observations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is Annual")
+
+![Fig 4](./CSE151A_fig4.png "**Figure 4.** A heatmap for non-categorical data")
 
 ## Preprocessing
 Results from Preprocessing: 
-![Fig 5](./CSE151A_fig5.png)
-<p style="text-align:center;">**Figure 5.** Resulting dataframe after performing all the preprocessing outlined in the methods section</p>
+![Fig 5](./CSE151A_fig5.png "**Figure 5.** Resulting dataframe after performing all the preprocessing outlined in the methods section")
 
 ## Model 1
 Results from Model 1:
@@ -141,8 +149,8 @@ Results from Model 1:
     - Testing accuracy: 0.1996498706043538
 ## Model 2
 
-![Fig 6](./CSE151A_fig6.png)
-<p style="text-align:center;">**Figure 6.** Resulting dataframe after mapping counties to their respective regions</p>
+![Fig 6](./CSE151A_fig6.png "**Figure 6.** Resulting dataframe after mapping counties to their respective regions")
+
 Results from Model 2:
 - For Decision Tree Classification Model
     - Cross-validation accuracy: 0.7119750017016482
@@ -156,8 +164,11 @@ Results from Model 2:
     - True Negative Rate: 0.919952301212767
     - False Positive Rate: 0.08004769878723296
     - False Negative Rate: 0.2401430963616989
+
 # Discussion Section
+
 ## Data Exploration
+
 Prior to preprocessing and model implementation, extensive data exploration was done to understand the structure and characteristics of the QCEW dataset. This step was important for identifying potential issues such as missing values, data distributions, and relevant features for analysis. Key exploratory steps were:
 - Heatmap Analysis: A heatmap was generated for non-categorical data to identify potential correlations between numerical variables.
 - Descriptive Statistics: Summary statistics, including mean, standard deviation, quartiles, and maximum/minimum values, were calculated for all columns to assess central tendency and variability.
@@ -167,17 +178,27 @@ Prior to preprocessing and model implementation, extensive data exploration was 
 - Pairplot Generation: Visualizations, such as pairplots, were generated to explore relationships between variables.
 
 These exploratory steps provided insights into the dataset's structure, ensuring that the features selected for modeling were relevant and that potential data issues could be addressed when moving forward. For example, identifying the number of older data points helped us to focus on the more meaningful subsets of the data. Additionally, the use of pairplots and heatmaps allowed us to visualize relationships and refine feature selection.
+
 ## Preprocessing
+
 During our preprocessing step, we dropped many of the columns from the original dataset. We felt like this would help with the accuracy and real-worl applicability of our models. For one, we dropped the data from 2016 and 2017 from our dataset since having dates from more recent years would better reflect current conditions, also the dataset was quite large so halving it would also reduce the overall computational cost. We also decided to only retain rows that contained "Annual" data as opposed to quarterly, since we don't want quarterly and annual information for the same establishments mixed together, as this may introduce noise. Another step we took was creating a new column called "Sector" which would use the NAICS code mapping to derive broader encompassing sectors to categorize each data point. This dramatically reduced the number of "Industries" we had, helping us keep dimensionality low when encoding. We also dropped any other columns that we did not believe would help with the predictive power of the model based on our data exploration to further reduce the dimensionality. One thing that we dropped during our preprocessing that may have been beneficial to keep however was "Ownership", knowing if the establishment was owned federally or by a private party may have helped with the accuracy of our models, as San Diego for example was built up as a major city due to the Navy's large presence, and so it would make sense if there were more federally owned establishments here. This is something we should have explored before making a decision on dropping that column.  
+
 ## Model 1
+
 For our first model, we tested three different models initially to get an understanding of what would work best with our data. We decided to go with the decision tree though because it was yielding better test accuracy. The decision tree model was also appealing given the nature of our datase since it both numerical variables, such as income levels, and categorical variables, such as industry type. Decision trees can easily work with different data types without requiring extensive preprocessing, such as scaling or encoding. Furthermore, the simplicity of decision trees makes them computationally efficient, which was an advantage during the exploratory phases of our analysis. The use of the Gini impurity criterion ensured that the model focused on maximizing similarities in each node, which is ideal for a classification task. Decision trees are however, prone to overfitting, and this was an issue that we ran into, as our training accuracy was roughly 20-30% higher than our test. We attempted to tune the model by pruning it but dealt with sharp drops in model performance, in general we struggled with balancing the issue of overfiting and accuracy. 
+
 ## Model 2
+
 Building on the findings from Model 1, we implemented a second decision tree model but incorporated cross-validation to address the overfitting issue observed in the initial model. Cross-validation helped evaluate the model's performance on multiple subsets of the dataset, enabling us to fine-tune hyperparameters, such as maximum depth and minimum samples per split, to achieve better performance. Doing this we were able to slightly increase the accuracy of the model. We also fine-tuned our KNN model by reducing the number of neighbors and specifying in the parameters that neighbors of closer distance bear greater influence on the predictions. Doing this we were able to drastically improve that model's performance. KNN still did not perform as well as the Decision Tree classifier however, which is why we went with the latter. Despite the improvement to the model, it's accuracy was still lower than we'd like and the model is struggling to fully capture the underlying relationship in our data.
+
 # Conclusion
+
 ## Model 1
+
 ## Model 2
 
 # Statement of Collaboration
+
 Name: Eric Stratford
 Title: Team Leader
 Contribution: Created the group repository and discord. Assisted with coding and milestone writeups.
