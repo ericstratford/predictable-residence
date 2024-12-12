@@ -179,18 +179,18 @@ Name: Eric Stratford
 Title: Team Leader
 Contribution: Created the group repository and discord. Assisted with coding and milestone writeups.
 
-Name: Syed Usmani
-Title: Coder/Writer
-Contribution: Assited in pre-processing, tuning models, adding cross-validation, and writing.
-
 Name: Kesler Anderson
 Title: Project Manager
 Contribution: Managed project deadlines by making Gradescope submissions and creating milestone branches. Assisted with coding and miletone writeups.
 
+Name: Syed Usmani
+Title: Coder/Writer
+Contribution: Assited in pre-processing, tuning models, adding cross-validation, and writing.
+
 Name: Maasilan Kumaraguru
-Title: Coder
-Contribution:
+Title: Coder/Write
+Contribution: Assisted in coding and writing.
 
 Name: Viet Tran
-Title:
-Contribution:
+Title: Coder/Writer
+Contribution: Assited in coding and writing.
