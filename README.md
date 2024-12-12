@@ -67,7 +67,7 @@ Here are the steps we took to explore our data:
 - Print the number of datapoints from years 2018 - 2019
 - Print all unique values in the *industry names* column
 - Print all null values in each column
-- Print datatypes of columns
+- Print the datatypes of each column
 - Perform shapiro wilks test on non-categorical data
 - Print all unique values in the *Area Types* column
 - Print the number of datapoints where *Area Type* is county
@@ -77,7 +77,7 @@ Here are the steps we took to explore our data:
 ## Preprocessing
 
 Here are the steps we took to preprocess our data: 
-- Drop columns Ownership, 1st Month Emp, 2nd Month Emp, 3rd Month Emp, and Total Wages (All Workers)
+- Drop the columns *Ownership*, *1st Month Emp*, *2nd Month Emp*, *3rd Month Emp*, and *Total Wages (All Workers)*
 - Drop columns *Area Type* and *Quarter*
 - Drop observations from 2016 and 2017
 - Drop outliers using IQR
@@ -197,7 +197,7 @@ Results from Model 2:
 
 # 4. Discussion
 
-### Data Exploration
+## Data Exploration
 
 Prior to preprocessing and model implementation, extensive data exploration was done to understand the structure and characteristics of the QCEW dataset. This step was important for identifying potential issues such as missing values, data distributions, and relevant features for analysis. Key exploratory steps were:
 - Heatmap Analysis: A heatmap was generated for non-categorical data to identify potential correlations between numerical variables.
@@ -209,15 +209,15 @@ Prior to preprocessing and model implementation, extensive data exploration was 
 
 These exploratory steps provided insights into the dataset's structure, ensuring that the features selected for modeling were relevant and that potential data issues could be addressed when moving forward. For example, identifying the number of older data points helped us to focus on the more meaningful subsets of the data. Additionally, the use of pairplots and heatmaps allowed us to visualize relationships and refine feature selection.
 
-### Preprocessing
+## Preprocessing
 
 During our preprocessing step, we dropped many of the columns from the original dataset. We felt like this would help with the accuracy and real-worl applicability of our models. For one, we dropped the data from 2016 and 2017 from our dataset since having dates from more recent years would better reflect current conditions, also the dataset was quite large so halving it would also reduce the overall computational cost. We also decided to only retain rows that contained "Annual" data as opposed to quarterly, since we don't want quarterly and annual information for the same establishments mixed together, as this may introduce noise. Another step we took was creating a new column called "Sector" which would use the NAICS code mapping to derive broader encompassing sectors to categorize each data point. This dramatically reduced the number of "Industries" we had, helping us keep dimensionality low when encoding. We also dropped any other columns that we did not believe would help with the predictive power of the model based on our data exploration to further reduce the dimensionality. One thing that we dropped during our preprocessing that may have been beneficial to keep however was "Ownership", knowing if the establishment was owned federally or by a private party may have helped with the accuracy of our models, as San Diego for example was built up as a major city due to the Navy's large presence, and so it would make sense if there were more federally owned establishments here. This is something we should have explored before making a decision on dropping that column.  
 
-### Model 1
+## Model 1
 
 For our first model, we tested three different models initially to get an understanding of what would work best with our data. We decided to go with the decision tree though because it was yielding better test accuracy. The decision tree model was also appealing given the nature of our datase since it both numerical variables, such as income levels, and categorical variables, such as industry type. Decision trees can easily work with different data types without requiring extensive preprocessing, such as scaling or encoding. Furthermore, the simplicity of decision trees makes them computationally efficient, which was an advantage during the exploratory phases of our analysis. The use of the Gini impurity criterion ensured that the model focused on maximizing similarities in each node, which is ideal for a classification task. Decision trees are however, prone to overfitting, and this was an issue that we ran into, as our training accuracy was roughly 20-30% higher than our test. We attempted to tune the model by pruning it but dealt with sharp drops in model performance, in general we struggled with balancing the issue of overfiting and accuracy. 
 
-### Model 2
+## Model 2
 
 Building on the findings from Model 1, we implemented a second decision tree model but incorporated cross-validation to address the overfitting issue observed in the initial model. Cross-validation helped evaluate the model's performance on multiple subsets of the dataset, enabling us to fine-tune hyperparameters, such as maximum depth and minimum samples per split, to achieve better performance. Doing this we were able to slightly increase the accuracy of the model. We also fine-tuned our KNN model by reducing the number of neighbors and specifying in the parameters that neighbors of closer distance bear greater influence on the predictions. Doing this we were able to drastically improve that model's performance. KNN still did not perform as well as the Decision Tree classifier however, which is why we went with the latter. Despite the improvement to the model, it's accuracy was still lower than we'd like and the model is struggling to fully capture the underlying relationship in our data.
 
