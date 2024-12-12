@@ -51,8 +51,10 @@ Here are the steps we took to create our [second model](https://github.com/erics
 - Get the average k-fold cross validation accuracy for decision tree model with k = 10
 - Train and test our data using a decision tree model 
 - Get the average k-fold cross validation accuracy for k-nearest neighbors model with k = 10
-- Train and test our data using a k nearest neighbors model
-- Calculate the accuracy, true positive rate, true negative rate, false positive rate, and false negative rate across all classes for k-nearest neighbors
+- Train and test our data using a k nearest neighbors model BEFORE hyperparamter tuning
+- Perform hyperparameter tuning for our k nearest neighbors model
+- Train and test our data using a k nearest neighbors model AFTER hyperparameter tuning
+- Calculate the accuracy, true positive rate, true negative rate, false positive rate, and false negative rate for each class with k-nearest neighbors
 
 # 3. Results
 
@@ -128,18 +130,50 @@ Results from Model 2:
 <b>Figure 6.</b> Resulting dataframe after mapping counties to their respective regions 
 </center><br>
 
-- Decision Tree Classification Model:
-    - Cross-validation accuracy: 0.7119750017016482
-    - Testing accuracy: 0.7351195006850357
-- K-nearest Neighbors classification Model:
-    - Mean accuracy: 0.7141
-    - Testing accuracy: 0.7598569036383012
-- Combined rates across all classes:
-    - Accuracy/Correct Rate: 0.7598569036383012
-    - True Positive Rate: 0.7598569036383012
-    - True Negative Rate: 0.919952301212767
-    - False Positive Rate: 0.08004769878723296
-    - False Negative Rate: 0.2401430963616989
+- For Decision Tree Classification Model
+    - Cross-validation accuracy: 0.7119370078797174
+   
+![Fig 7](./CSE151A_fig7.png)
+<center> 
+<b>Figure 7.</b> Training set classification report for decision tree classification model
+</center><br>
+
+    - Testing accuracy: 0.7318465519866038
+    
+![Fig 8](./CSE151A_fig8.png)
+<center> 
+<b>Figure 8.</b> Test set classification report for decision tree classification model
+</center><br>
+
+- For K-nearest neighbors classification Model
+    - Mean accuracy: 0.720157491662262
+    - Testing accuracy: 0.7636626579388035
+
+![Fig 9](./CSE151A_fig9.png)
+<center> 
+<b>Figure 9.</b> Test set classification report for k neighbors model BEFORE hyperparameter tuning 
+</center><br>
+
+    - Best Hyperparameters:
+          -n_neighbors = 1
+          -p = 2
+          -weights = uniform
+    - Best Cross-Validation Accuracy after hyperparameter tuning: 0.7201574934726983
+    - Testing Accuracy after hyperparameter tuning: 0.7637
+    
+![Fig 10](./CSE151A_fig10.png)
+<center> 
+<b>Figure 10.</b> Test set classification report for k neighbors model AFTER hyperparameter tuning
+</center><br>
+
+- True positive, false positive, true negative, and false negative by class
+
+|                   | Class 0  | Class 1 | Class 2 | Class 3 |
+| :---------------- | :------: | :-----: | :-----: | :-----: |
+| Class 0           |   2722   | 321     |  343    | 127     |
+| Class 1           |   359    | 2977    | 371     | 240     |
+| Class 2           |  358     | 325     |  2760   | 150     |
+| Class 3           |  131     | 228     |  152    | 1574    |
 
 # 4. Discussion
 
@@ -169,9 +203,7 @@ Building on our expereince from Model 1 we implemented a second decision tree mo
 
 # 5. Conclusion
 
-### Model 1
-
-### Model 2
+In conclusion, our model still isn't where we would like it to be as it is underfitting a bit. However, it still performs reasonably well. If we had more time with this project we would definitely look to try other models. If we could start our project over from the beginning with the knowledge we have now, we would definitely spend much more time considering the data and making the data much more usable before we started using various models. One issue we discovered is that while we had a lot of data, it wasn't enough to properly classify the various output classes in our data. We had to combine output classes in order to improve our results. Some models we could use in the future include SVMs and neural networks. 
 
 # 6. Statement of Collaboration
 
@@ -188,8 +220,7 @@ Title: Coder/Writer\
 Contribution: Assited in pre-processing, tuning models, adding cross-validation, and writing.
 
 Name: Maasilan Kumaraguru\
-Title: Coder/Writer\
-Contribution: Assisted in coding and writing.
+Contribution: Assisted in coding and writing. Assisted with preprocessing by removing outliers using IQR. Worked to improve test and training accuracy on k nearest neighbors model. Contributed to write ups across all milestones. Assisted with final write up.
 
 Name: Viet Tran\
 Title: Coder/Writer\
