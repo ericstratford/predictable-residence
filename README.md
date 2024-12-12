@@ -58,21 +58,106 @@ We could apply PCA to our test and train sets prior to fitting the model.
 [Milestone 4 Notebook](https://github.com/ericstratford/predictable-residence/blob/Milestone4/CA_Residence_Prediction.ipynb)
 
 # Introduction to Your Project
+Our project aims to predict the California region (i.e. Superior Counties, Bay Area Counties, Central Counties, Southern Counties, Los Angeles Counties) in which an establishment is based from observations of establisments based on features like number of establishments, establishment sector, average weekly wages, and average monthly employment using the Quarterly Census of Employment and Wages dataset (linked [here](https://catalog.data.gov/dataset/quarterly-census-of-employment-and-wages-qcew-a6fea)). We will employ machine learning algorithms and specialized models in order to accomplish this task. Our model would be a classification model doing supervised learning since California counties, which can be mapped to regions, are included in the dataset. This model could highlight which establishment sectors are popular in any given California region. We chose this project because inferring the region in which an establishment is based from features of that establishment seemed interesting. Inferring the region in which an establishment is based from features of said establishment is significant because it helps us understand which establishments are popular and infer which are unpopular in any California region. Knowing where certain establishmnt sectors are popular or unpopular enables entrepreneurs to find untapped markets where there may be little competition.
 
 # Figures
 
 # Methods Section
 ## Data Exploration
+In order to perform data exploration we did the following: 
+- printed a heatmap for non-categorical data
+- printed the columns of the dataset
+- printed the mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for every column in the dataset
+- printed the number of datapoints from years 2018 - 2019
+- printed all unique values in the *industry names* column
+- printed all null values in each column
+- printed datatypes of columns
+- performed shapiro wilks test on non-categorical data
+- printed all unique values in the *Area Types* column
+- printed the number of datapoints where *Area Type* is county
+- printed a pairplot that only includes obeservations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is annual
+## Preprocessing
+In order to perform preprocessing we did the following: 
+- Drop columns Ownership, 1st Month Emp, 2nd Month Emp, 3rd Month Emp, and Total Wages (All Workers)
+- Dropped columns *Area Type* and *Quarter*
+- Dropped observations from 2016 and 2017
+- Dropped outliers using IQR
+- Created the column *Sector* which is just a remapping of *NAICS*
+- Replaced columns *NAICS Level*, *NAICS Code*, and *Industry Name* with *Sector*
+- Created the *log_weekly_wages* column which is just a log transformation of the *Average Weekly Wages* column
+- Create the *log_monthly_employment* column which is just a log tranformation of the *Average Monthly Wages* column
+- Create a dataframe that one hot encodes the *Sector* feature
+- Create a dataframe that label encodes the *Sector* feature
+- Create a dataframe that drops the *Sector* feature
+## Model 1
+In order to create Model 1 we did the following: 
+- Split the data into train and test using the one hot encoded dataframe
+- Trained and tested our data using a decision tree model
+- Trained and tested our data using a random forest model
+- Trained and tested our data using a k nearest neighbors model
+## Model 2
+In order to create Model 2 we did the following: 
+- mapped counties to their respective regions
+- Standardized X_train and X_test using normalization
+- Got average k-fold cross validation accuracy for decision tree model with k = 10
+- Trained and tested our data using a decision tree model 
+- Got average k-fold cross validation accuracy for k nearest neighbors model with k = 10
+- Trained and tested our data using a k nearest neighbors model
+- Calculated the accuracy, true positive rate, true negative rate, false positive rate, and false negative rate across all classes for k nearest neighbors
+# Results Section
+## Data Exploration
+Results from Data Exploration: 
+- The columns of the dataset are *Area Type*, *Area Name*, *Year*, *Quarter*, *Ownership*, *NAICS Level*, *NAICS Code*, *Industry Name*, *Establishments*, *Average Monthly Employment*, *1st Month Emp*, *2nd Month Emp*, *3rd Month Emp*, *Total Wages (All Workers)*, and *Average Weekly Wages*.
+- ![Fig 1](./CSE151A_fig1.png)
+Fig 1. The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column in our dataset
+- The number of datapoints from 2018-2019 is 506913.
+- There are too many industry names to list (1000+ unique industry names).
+- There are no null values in the dataset.
+- ![Fig 2](./CSE151A_fig2.png)
+Fig 2. Columns and their associated datatypes
+- Shapiro Wilks test failed because we have too many observations.
+- The following are all the unique Area Types: 'County', 'California - Statewide', 'United States'
+- 441540 datapoints are just counties.
+- ![Fig 3](./CSE151A_fig3.png)
+Fig 3. A pairplot that only includes observations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is Annual.
+![Fig 4](./CSE151A_fig4.png)
+Fig 4. A heatmap for non-categorical data
+## Preprocessing
+Results from Preprocessing: 
+![Fig 5](./CSE151A_fig5.png)
+Fig 5. Resulting dataframe after performing all the preprocessing outlined in the methods section
+## Model 1
+Results from Model 1:
+- Decision Tree Classification Model using Gini
+    - Training accuracy: 0.9995052425263078
+    - Testing accuracy: 0.6148576647891613
+- Random Forest Classification Model
+    - Training accuracy: 0.9995052425263078
+    - Testing accuracy: 0.6089968031663876
+- K nearest neighbors Classification Model
+    - Training accuracy: 0.4934254343399745
+    - Testing accuracy: 0.1996498706043538
+## Model 2
+![Fig 6](./CSE151A_fig6.png)
+Fig 6. Resulting dataframe after mapping counties to their respective regions
+Results from Model 2:
+- For Decision Tree Classification Model
+    - Cross-validation accuracy: 0.7119750017016482
+    - Testing accuracy: 0.7351195006850357
+- For K nearest neighbors classification Model
+    - Mean accuracy: 0.7141
+    - Testing accuracy: 0.7598569036383012
+- Combined rates across all classes:
+    - Accuracy/Correct Rate: 0.7598569036383012
+    - True Positive Rate: 0.7598569036383012
+    - True Negative Rate: 0.919952301212767
+    - False Positive Rate: 0.08004769878723296
+    - False Negative Rate: 0.2401430963616989
+# Discussion Section
+## Data Exploration
 ## Preprocessing
 ## Model 1
 ## Model 2
-
-# Results Section
-## Model 1
-## Model 2
-
-# Discussion Section
-
 # Conclusion
 ## Model 1
 ## Model 2
