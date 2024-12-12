@@ -203,7 +203,7 @@ Building on our expereince from Model 1 we implemented a second decision tree mo
 
 # 5. Conclusion
 
-In conclusion, our model still isn't where we would like it to be as it is underfitting a bit. However, it still performs reasonably well. If we had more time with this project we would definitely look to try other models. If we could start our project over from the beginning with the knowledge we have now, we would definitely spend much more time considering the data and making the data much more usable before we started using various models. One issue we discovered is that while we had a lot of data, it wasn't enough to properly classify the various output classes in our data. We had to combine output classes in order to improve our results. Some models we could use in the future include SVMs and neural networks. 
+In conclusion, our model still is not where we would like it to be as it is underfitting a bit. However, it still performs reasonably well. If we had more time with this project we would definitely try other models to achieve a higher testing accuracy. If we could start our project over from the beginning with the knowledge we have now, we would definitely spend much more time considering the data and making the data much more usable before we started using various models. One issue we discovered is that while we had a lot of data, it wasn't enough to properly classify the various output classes in our data. We had to combine output classes in order to improve our results. Some models we could use in the future include SVMs and neural networks. 
 
 # 6. Statement of Collaboration
 
