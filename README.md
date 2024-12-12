@@ -209,7 +209,7 @@ In conclusion, our model still is not where we would like it to be as it is unde
 
 Name: Eric Stratford\
 Title: Team Leader\
-Contribution: Created the group repository and discord. Assisted with pre-processing, tuning models, reviewing code, and writing all milestone write ups.
+Contribution: Created the group repository and discord. Assisted with pre-processing, tuning models, model evaluation, reviewing code, and writing all milestone write ups.
 
 Name: Kesler Anderson\
 Title: Project Manager\
