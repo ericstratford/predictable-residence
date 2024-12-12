@@ -109,23 +109,25 @@ In order to create Model 2 we did the following:
 Results from Data Exploration: 
 - The columns of the dataset are *Area Type*, *Area Name*, *Year*, *Quarter*, *Ownership*, *NAICS Level*, *NAICS Code*, *Industry Name*, *Establishments*, *Average Monthly Employment*, *1st Month Emp*, *2nd Month Emp*, *3rd Month Emp*, *Total Wages (All Workers)*, and *Average Weekly Wages*.
 - ![Fig 1](./CSE151A_fig1.png)
-Fig 1. The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column in our dataset
+<p style="text-align:center;">**Figure 1.** The mean, count, standard deviation, minimum, 25% quartile, 50% quartile, 75% quartile, and maximum for each column in our dataset</p>
 - The number of datapoints from 2018-2019 is 506913.
 - There are too many industry names to list (1000+ unique industry names).
 - There are no null values in the dataset.
 - ![Fig 2](./CSE151A_fig2.png)
-Fig 2. Columns and their associated datatypes
+<p style="text-align:center;">**Figure 2.** Columns and their associated datatypes</p>
 - Shapiro Wilks test failed because we have too many observations.
 - The following are all the unique Area Types: 'County', 'California - Statewide', 'United States'
 - 441540 datapoints are just counties.
 - ![Fig 3](./CSE151A_fig3.png)
-Fig 3. A pairplot that only includes observations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is Annual.
-![Fig 4](./CSE151A_fig4.png)
-Fig 4. A heatmap for non-categorical data
+<p style="text-align:center;">**Figure 3.** A pairplot that only includes observations where *Area Type* is county, *Year* is either 2019 or 2018, and *Quarter* is Annual.</p>
+- ![Fig 4](./CSE151A_fig4.png)
+<p style="text-align:center;">**Figure 4.** A heatmap for non-categorical data</p>
+
 ## Preprocessing
 Results from Preprocessing: 
 ![Fig 5](./CSE151A_fig5.png)
-Fig 5. Resulting dataframe after performing all the preprocessing outlined in the methods section
+<p style="text-align:center;">**Figure 5.** Resulting dataframe after performing all the preprocessing outlined in the methods section</p>
+
 ## Model 1
 Results from Model 1:
 - Decision Tree Classification Model using Gini
@@ -138,8 +140,9 @@ Results from Model 1:
     - Training accuracy: 0.4934254343399745
     - Testing accuracy: 0.1996498706043538
 ## Model 2
+
 ![Fig 6](./CSE151A_fig6.png)
-Fig 6. Resulting dataframe after mapping counties to their respective regions
+<p style="text-align:center;">**Figure 6.** Resulting dataframe after mapping counties to their respective regions</p>
 Results from Model 2:
 - For Decision Tree Classification Model
     - Cross-validation accuracy: 0.7119750017016482
