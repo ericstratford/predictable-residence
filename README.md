@@ -225,4 +225,4 @@ Contribution: Assisted with pre-processing by removing outliers using IQR. Worke
 
 Name: Viet Tran\
 Title: Coder/Writer\
-Contribution: Assited with coding and writing.
+Contribution: Assited with coding and writing across all milestones. Worked on placing the models on the overfitting graph.
