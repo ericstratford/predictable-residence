@@ -132,38 +132,38 @@ Results from Model 2:
 
 - For Decision Tree Classification Model
     - Cross-validation accuracy: 0.7119370078797174
+    - Testing accuracy: 0.7318465519866038
+    - The classification reports for the training and testing sets are shown in **Figure 7** and **Figure 8**, repsectively
    
 ![Fig 7](./CSE151A_fig7.png)
 <center> 
-<b>Figure 7.</b> Training set classification report for decision tree classification model
+<b>Figure 7.</b> Training set classification report for the decision tree classification model
 </center><br>
-
-    - Testing accuracy: 0.7318465519866038
     
 ![Fig 8](./CSE151A_fig8.png)
 <center> 
-<b>Figure 8.</b> Test set classification report for decision tree classification model
+<b>Figure 8.</b> Testing set classification report for the decision tree classification model
 </center><br>
 
 - For K-nearest neighbors classification Model
     - Mean accuracy: 0.720157491662262
     - Testing accuracy: 0.7636626579388035
+    - Best Hyperparameters:
+        - n_neighbors = 1
+        - p = 2
+        - weights = uniform
+    - Best Cross-Validation Accuracy after hyperparameter tuning: 0.7201574934726983
+    - Testing Accuracy after hyperparameter tuning: 0.7637
+    - The classification reports for testing set before and after hyperparameter tuning can be seen in **Figure 9** and **Figure 10**, respectively
 
 ![Fig 9](./CSE151A_fig9.png)
 <center> 
-<b>Figure 9.</b> Test set classification report for k neighbors model BEFORE hyperparameter tuning 
+<b>Figure 9.</b> Testing set classification report for the k-nearest neighbors model before hyperparameter tuning 
 </center><br>
-
-    - Best Hyperparameters:
-          -n_neighbors = 1
-          -p = 2
-          -weights = uniform
-    - Best Cross-Validation Accuracy after hyperparameter tuning: 0.7201574934726983
-    - Testing Accuracy after hyperparameter tuning: 0.7637
     
 ![Fig 10](./CSE151A_fig10.png)
 <center> 
-<b>Figure 10.</b> Test set classification report for k neighbors model AFTER hyperparameter tuning
+<b>Figure 10.</b> Testing set classification report for the k-nearest neighbors model after hyperparameter tuning
 </center><br>
 
 - True positive, false positive, true negative, and false negative by class
@@ -209,19 +209,20 @@ In conclusion, our model still isn't where we would like it to be as it is under
 
 Name: Eric Stratford\
 Title: Team Leader\
-Contribution: Created the group repository and discord. Assisted with coding and milestone writeups.
+Contribution: Created the group repository and discord. Assisted with pre-processing, tuning models, reviewing code, and writing all milestone write ups.
 
 Name: Kesler Anderson\
 Title: Project Manager\
-Contribution: Managed project deadlines by making Gradescope submissions and creating milestone branches. Assisted with coding and miletone writeups.
+Contribution: Managed project deadlines by making Gradescope submissions and creating milestone branches. Assisted with reviewing code and writing all miletone write ups.
 
 Name: Syed Usmani\
 Title: Coder/Writer\
-Contribution: Assited in pre-processing, tuning models, adding cross-validation, and writing.
+Contribution: Assisted in pre-processing, tuning models, adding cross-validation, and writing all milestone write ups.
 
 Name: Maasilan Kumaraguru\
-Contribution: Assisted in coding and writing. Assisted with preprocessing by removing outliers using IQR. Worked to improve test and training accuracy on k nearest neighbors model. Contributed to write ups across all milestones. Assisted with final write up.
+Title: Coder/Writer\
+Contribution: Assisted with pre-processing by removing outliers using IQR. Worked on improving testing and training accuracy on the k-nearest neighbors model. Contributed to writing all milestone write ups.
 
 Name: Viet Tran\
 Title: Coder/Writer\
-Contribution: Assited in coding and writing.
+Contribution: Assited with coding and writing.
